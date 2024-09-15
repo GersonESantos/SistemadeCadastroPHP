@@ -19,7 +19,7 @@
             transform: translate(-50%, -50%);
             width: 400px;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             box-sizing: border-box;
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
             border-radius: 15px;
@@ -39,16 +39,70 @@
             position: relative;
         }
         .inputUser{
-            width: 100%;
-            padding: 10px 0;
-            font-size: 16px;
-            color: white;
-            margin-bottom: 30px;
+            background: none;
             border: none;
             border-bottom: 1px solid white;
-            background: none;
             outline: none;
+            color: white;
+            width: 100%;
+            font-size: 16px;
             letter-spacing: 2px;
+        /*
+            padding: 10px 0;
+            margin-bottom: 30px;
+           */ 
+        }
+        .labelInput{
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            transition: .5s;
+            /*letter-spacing: 2px;
+            padding: 10px 0;
+            color: white;
+            */
+        }
+        .inputUser:focus ~ .labelInput, .inputUser:valid ~ .labelInput{
+            top: -18px;
+            left: 0;
+            color: dodgerblue;
+            font-size: 12px;
+        }
+        #data_nascimento{
+            border: none;
+            padding: 10px 0;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+
+            /*background: none;
+            border-bottom: 1px solid white;
+            color: white;
+            width: 100%;
+            letter-spacing: 2px;
+            */
+        }
+        #submit{
+            background: none;
+            background-image: linear-gradient(to right, rgb(20,147,220), rgb(017,54,71));
+            border: 2px solid white;
+            color: white;
+            padding: 5px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 18px;
+            letter-spacing: 2px;
+            border-radius: 10px;
+            transition: .5s;
+        }
+        #submit:hover{
+            background-image: linear-gradient(to right, rgb(0,80,172), rgb(80,19,195));
+           /*
+            background: none;
+            color: dodgerblue;
+            border: 2px solid dodgerblue;
+            */
         }
     </style>
 </head>
@@ -60,27 +114,27 @@
                 <br>
                 <div class="inputBox">
                     <input type="type" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome">Nome Completo</label>
+                    <label for="nome" class="labelInput">Nome Completo</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="email" name="email" id="email" class="inputUser" required>
-                    <label for="email">Email</label>
+                    <label for="email" class="labelInput">Email</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="password" name="senha" id="senha" class="inputUser" required>
-                    <label for="senha">Senha</label>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="password" name="confirma_senha" id="confirma_senha" class="inputUser" required>
-                    <label for="confirma_senha">Confirma Senha</label>
+                    <label for="confirma_senha" class="labelInput">Confirma Senha</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="telefone" id="telefone" class="inputUser" required>
-                    <label for="telefone">Telefone</label>
+                    <label for="telefone" class="labelInput">Telefone</label>
                 </div>
                 <br>
                 <div>
@@ -93,28 +147,28 @@
                     <label for="outro">Outro</label>
                 </div>
                 <br>
-                <div class="inputBox">
-                    <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" required>
-                    <label for="data_nascimento">Data de Nascimento</label>
-                </div>
+            
+                <label for="data_nascimento">Data de Nascimento</label>
+                <input type="date" name="data_nascimento" id="data_nascimento"  required>
+                <br>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="estado" id="estado" class="inputUser" required>
-                    <label for="nome">Estado</label>
+                    <label for="estado" class="labelInput">Estado</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="cidade" id="cidade" class="inputUser" required>
-                    <label for="nome">Cidade</label>
+                    <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="endereco" id="endereco" class="inputUser" required>
-                    <label for="nome">Endereço</label>
+                    <label for="endereco" class="labelInput">Endereço</label>
                 </div>
                 <br>
 
-                <button type="submit">Cadastrar</button>
+                <button type="submit" name="submit" id="submit">Cadastrar</button>
             </fieldset>
         </form>
     </div>
